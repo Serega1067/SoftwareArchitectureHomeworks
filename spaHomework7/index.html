@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            My first SPA application
+        </title>
+        <link ref="stylesheet" href="css/styles.css" />
+
+    </head>
+    <body>
+        <h1>Hello!</h1>
+        <h1>Application Menu</h1>
+        <!--
+            Чтобы сделать переходы по страницам добавим
+            обработку событий onclick и будим вызывать
+            некий метод обработки, который описан в JS
+            и он называется route().
+        -->
+        <a href="/" onclick="route()">Main</a>
+        <a href="/settings" onclick="route()">Settings</a>
+        <a href="/about" onclick="route()">About</a>
+
+        <div id="main-page"></div>
+
+        <script src="js/router.js"></script>
+
+    </body>
+</html>
