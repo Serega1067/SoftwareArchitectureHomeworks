@@ -64,6 +64,8 @@ public class BookingView implements View {
         // его в интерфейс View
     }
 
+
+
     /**
      * Действие клиента (пользователь нажал на кнопку изменения
      * бронирования),
@@ -80,5 +82,14 @@ public class BookingView implements View {
                                        int tableNo,
                                        String name) {
 
+        observer.onChangeReservationTable(oldReservation,
+                                          orderDate,
+                                          tableNo,
+                                          name);
+
+    }
+
+    public void printChangeReservationTableResult(int reservationNo) {
+        System.out.printf("Столик успешно забронирован: #%d\n", reservationNo);
     }
 }

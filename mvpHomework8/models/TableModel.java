@@ -75,4 +75,26 @@ public class TableModel implements Model {
     }
 
     //TODO: changeReservationTable
+
+    public void deleteReservationTable(int idReservation,
+                                       int tableNoOld) {
+        Optional<Table> table = loadTables().stream().filter(
+                t -> t.getNo() == tableNoOld).findFirst();
+        if (table.isPresent()) {
+            table.get().getReservations().removeIf(
+                    r -> r.getId() == idReservation);
+            System.out.println("Заказ #" + idReservation + " отменён");
+        }
+
+    }
+
+    public int changeReservationTable(int idReservation,
+                                      Date reservationDate,
+                                      int tableNo,
+                                      String name) {
+
+        deleteReservationTable(idReservation, tableNo);
+
+        return reservationTable(reservationDate, tableNo, name);
+    }
 }

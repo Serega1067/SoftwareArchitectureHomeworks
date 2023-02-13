@@ -29,7 +29,10 @@ public class Sample01 {
         // Дальше пользователь выбирает столик и нажимает на кнопку
 
         // С эмулируем нажатие на кнопку
-        view.reservationTable(new Date(), 3, "Сергей");
+        view.reservationTable(new Date(), 1, "Сергей");
+
+        view.changeReservationTable(
+                1, new Date(), 1, "Серега");
 
     }
 }

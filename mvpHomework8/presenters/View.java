@@ -11,4 +11,6 @@ public interface View {
     void setObserver(ViewObserver observer);
 
     void printReservationTableResult(int reservation);
+
+    void printChangeReservationTableResult(int reservation);
 }

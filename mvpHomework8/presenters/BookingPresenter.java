@@ -94,4 +94,24 @@ public class BookingPresenter implements ViewObserver {
     //TODO: printChangeReservationTableResult
 
     //TODO: onChangeReservationTable
+
+    public void printChangeReservationTableResult(int reservationNo) {
+        // Создадим метод в BookingView
+        // После этого мы можем обратиться к представлению
+        bookingView.printChangeReservationTableResult(reservationNo);
+    }
+
+    public void onChangeReservationTable(int idReservation,
+                                         Date reservationDate,
+                                         int tableNo,
+                                         String name) {
+
+        model.deleteReservationTable(idReservation, tableNo);
+
+        int reservationNo = model.reservationTable(reservationDate,
+                                                   tableNo,
+                                                   name);
+
+        printChangeReservationTableResult(reservationNo);
+    }
 }

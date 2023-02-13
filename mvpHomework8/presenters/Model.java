@@ -13,7 +13,17 @@ public interface Model {
 
     int reservationTable(
             Date reservationDate, int tableNo, String name);
+
+    int changeReservationTable(int idReservation,
+                               Date reservationDate,
+                               int tableNo,
+                               String name);
+
+    void deleteReservationTable(int idReservation,
+                                int tableNoOld);
 }
 
 // Теперь мы можем имплементировать данный интерфейс в контексте
 // главной модели TableModel
+
+
